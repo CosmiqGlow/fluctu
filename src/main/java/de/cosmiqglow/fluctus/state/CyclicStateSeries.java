@@ -2,7 +2,7 @@ package de.cosmiqglow.fluctus.state;
 
 import org.apache.commons.lang.Validate;
 
-public class CyclicStateSeries extends StateHolder {
+public class CyclicStateSeries extends StatesContainer {
 
     private final int maxIterations;
     private int currentIteration = 0;

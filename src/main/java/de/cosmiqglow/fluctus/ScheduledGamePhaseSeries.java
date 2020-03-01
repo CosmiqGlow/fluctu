@@ -1,10 +1,10 @@
 package de.cosmiqglow.fluctus;
 
-import de.cosmiqglow.fluctus.state.StateSeries;
+import de.cosmiqglow.fluctus.state.StatesSeries;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
-public class ScheduledGamePhaseSeries extends StateSeries {
+public class ScheduledGamePhaseSeries extends StatesSeries {
 
     private final Plugin plugin;
     private final long interval;

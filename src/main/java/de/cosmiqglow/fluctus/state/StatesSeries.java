@@ -5,7 +5,7 @@ import org.apache.commons.lang.Validate;
 /**
  * StateSeries is a StateHolder, that can organize and execute a series of states.
  */
-public class StateSeries extends StateHolder {
+public class StatesSeries extends StatesContainer {
 
     private int current = 0;
     private boolean skipping = false;

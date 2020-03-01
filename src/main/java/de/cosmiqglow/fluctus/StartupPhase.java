@@ -83,4 +83,5 @@ public abstract class StartupPhase extends TimedGamePhase {
     protected boolean isReadyToEnd() {
         return super.isReadyToEnd() && getPlayers().size() >= minimumPlayers;
     }
+
 }

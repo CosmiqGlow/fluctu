@@ -11,7 +11,6 @@ public abstract class State {
     private boolean updating = false;
     private boolean ended = false;
     private boolean frozen = false;
-    //TODO: Add lock
 
     /**
      * Start the State.
@@ -43,13 +42,14 @@ public abstract class State {
     /**
      * Updates the state and checks if it is ready to end by calling {@link State#isReadyToEnd()}.
      * Furthermore it calls {@link State#onUpdate()}.
-     * If a state is freezed, this will never succeed to end the state automatically.
+     * If a state is frozen, this will never succeed to end the state automatically.
      * You can implement your own scheduling to provide consistent updating.
      */
     public void update() {
         if (!started || ended || updating) {
             return;
         }
+
         updating = true;
 
         if (isReadyToEnd() && !frozen) {
@@ -71,14 +71,14 @@ public abstract class State {
     }
 
     /**
-     * Unfreezes the state and lets it end by update ticks.
+     * Unfreezes the state and let's it end by update ticks or another condition.
      * Opposite function: {@link State#freeze()}
      */
     public void unfreeze() {
         frozen = false;
     }
 
-    public boolean isFrozen() {
+    protected boolean isFrozen() {
         return frozen;
     }
 
@@ -108,7 +108,7 @@ public abstract class State {
     /**
      * Provides possibility to update the state.
      * Will be called, when the state is updated by {@link State#update()}.
-     * Please make sure that if you dont provide scheduling for the state, this won't work by itself.
+     * Please make sure that if you don't provide scheduling for the state, this won't work by itself.
      */
     protected abstract void onUpdate();
 
@@ -126,4 +126,5 @@ public abstract class State {
     protected boolean isReadyToEnd() {
         return ended;
     }
+
 }

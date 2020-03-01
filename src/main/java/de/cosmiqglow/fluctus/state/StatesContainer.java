@@ -10,9 +10,9 @@ import java.util.List;
 
 /**
  * Represents a State that can hold multiple ordered states inside of itself.
- * This class is used by {@link StateSeries} and its subclasses.
+ * This class is used by {@link StatesSeries} and its subclasses.
  */
-public abstract class StateHolder extends State implements Iterable<State> {
+public abstract class StatesContainer extends State implements Iterable<State> {
 
     protected final List<State> states = new LinkedList<>();
 
@@ -64,4 +64,5 @@ public abstract class StateHolder extends State implements Iterable<State> {
     public Iterator<State> iterator() {
         return states.iterator();
     }
+
 }

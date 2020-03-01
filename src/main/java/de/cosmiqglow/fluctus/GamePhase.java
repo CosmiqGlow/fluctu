@@ -25,23 +25,18 @@ public abstract class GamePhase extends State implements Listener {
 
     @Override
     public final void start() {
-        super.start();
         register(this);
     }
 
     @Override
     public final void end() {
-        super.end();
-        if (!hasEnded()) {
-            return;
-        }
-
         listeners.forEach(HandlerList::unregisterAll);
         tasks.forEach(task -> {
             if (!task.isCancelled()) {
                 task.cancel();
             }
         });
+
         listeners.clear();
         tasks.clear();
     }
@@ -50,8 +45,10 @@ public abstract class GamePhase extends State implements Listener {
         return Bukkit.getOnlinePlayers();
     }
 
-    protected final void broadcast(String message) {
-        getPlayers().forEach(p -> p.sendMessage(message));
+    protected void broadcast(String message) {
+        for (Player player : getPlayers()) {
+            player.sendMessage(message);
+        }
     }
 
     protected final void register(Listener listener) {
@@ -69,7 +66,6 @@ public abstract class GamePhase extends State implements Listener {
 
     protected final void runTask(Runnable runnable, long delay) {
         BukkitTask task = plugin.getServer().getScheduler().runTaskLater(plugin, runnable, delay);
-        tasks.add(task);
     }
 
     protected final void runTaskTimer(Runnable runnable, long delay, long interval) {
