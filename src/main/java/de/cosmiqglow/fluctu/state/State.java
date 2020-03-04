@@ -1,4 +1,4 @@
-package de.cosmiqglow.fluctus.state;
+package de.cosmiqglow.fluctu.state;
 
 /**
  * A State represents a condition in which a system is located.

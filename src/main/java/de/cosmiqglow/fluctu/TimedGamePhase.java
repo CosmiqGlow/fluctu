@@ -1,4 +1,4 @@
-package de.cosmiqglow.fluctus;
+package de.cosmiqglow.fluctu;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.plugin.java.JavaPlugin;

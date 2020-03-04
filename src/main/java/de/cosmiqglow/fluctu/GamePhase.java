@@ -1,6 +1,6 @@
-package de.cosmiqglow.fluctus;
+package de.cosmiqglow.fluctu;
 
-import de.cosmiqglow.fluctus.state.State;
+import de.cosmiqglow.fluctu.state.State;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

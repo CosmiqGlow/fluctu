@@ -1,4 +1,4 @@
-package de.cosmiqglow.fluctus.state;
+package de.cosmiqglow.fluctu.state;
 
 import org.apache.commons.lang.Validate;
 

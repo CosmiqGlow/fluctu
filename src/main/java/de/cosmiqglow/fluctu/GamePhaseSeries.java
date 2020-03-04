@@ -1,6 +1,6 @@
-package de.cosmiqglow.fluctus;
+package de.cosmiqglow.fluctu;
 
-import de.cosmiqglow.fluctus.state.StatesSeries;
+import de.cosmiqglow.fluctu.state.StatesSeries;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class GamePhaseSeries extends StatesSeries {

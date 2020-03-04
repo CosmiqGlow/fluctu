@@ -1,4 +1,4 @@
-package de.cosmiqglow.fluctus;
+package de.cosmiqglow.fluctu;
 
 import com.google.common.collect.ImmutableSet;
 import org.apache.commons.lang.Validate;
