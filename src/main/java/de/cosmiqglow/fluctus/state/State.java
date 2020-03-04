@@ -29,6 +29,7 @@ public abstract class State {
     /**
      * Finishes the state, if it has been started and not ended yet.
      * Call this to end the state and {@link State#onEnd()}.
+     * TODO: Rename to stop (more obvious with start and stop)
      */
     public void end() {
         if (!started || ended) {

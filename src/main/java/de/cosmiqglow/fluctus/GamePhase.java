@@ -1,6 +1,7 @@
 package de.cosmiqglow.fluctus;
 
 import de.cosmiqglow.fluctus.state.State;
+import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -8,6 +9,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -20,6 +22,7 @@ public abstract class GamePhase extends State implements Listener {
     private final Set<BukkitTask> tasks = new HashSet<>();
 
     public GamePhase(JavaPlugin plugin) {
+        Validate.notNull(plugin, "JavaPlugin cannot be null!");
         this.plugin = plugin;
     }
 
@@ -41,6 +44,7 @@ public abstract class GamePhase extends State implements Listener {
         tasks.clear();
     }
 
+    @NotNull
     protected Collection<? extends Player> getPlayers() {
         return Bukkit.getOnlinePlayers();
     }
@@ -73,6 +77,7 @@ public abstract class GamePhase extends State implements Listener {
         tasks.add(task);
     }
 
+    @NotNull
     protected final JavaPlugin getPlugin() {
         return plugin;
     }

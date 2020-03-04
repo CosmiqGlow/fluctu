@@ -16,7 +16,7 @@ public class StatesSeries extends StatesContainer {
      * This will not automatically skip to the newly added state.
      * @param state - not null state
      */
-    public void addNext(State state) {
+    public void insertNext(State state) {
         Validate.notNull(state);
         states.add(current + 1, state);
     }

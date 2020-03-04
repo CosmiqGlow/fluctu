@@ -36,6 +36,8 @@ public abstract class StartupPhase extends TimedGamePhase {
         } else {
             event.setJoinMessage("§a» §7" + player.getName() + " (§c" + getPlayers().size() + "§7/§e" + Bukkit.getMaxPlayers() + "§7)");
         }
+
+        onPlayerJoin(event);
     }
 
     public abstract void onPlayerJoin(PlayerJoinEvent event);
